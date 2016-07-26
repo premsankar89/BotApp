@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>NodeJS Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <form id="myform" action="/configure" method="post" enctype="application/x-www-form-urlencoded">
+ <h2>Watson Chat Bot</h2>
+  <section>
+ 
+  <fieldset>
+    <legend>Watson Conversation Service</legend>
+    <p>
+    <label >
+    <span>UserName: </span>
+    <input type="text" name="conv_username" title="Specify the conversation service user name" required />
+    
+    </label>
+  </p>
+ 
+   <p>
+    <label >
+    <span>Password: </span>
+    <input type="text" name="conv_password" title="Specify the conversation service password" required />
+    </label>
+  </p>
+  
+     <p>
+    <label >
+    <span>Workspace ID: </span>
+    <input type="text"  name="conv_workspace_id" title="Specify the conversation service Workspace ID" required />
+    </label>
+  </p>
+  </fieldset>
+ 
+ 
+  </section>
+ 
+    <section>
+  
+  <fieldset>
+    <legend>Telegram</legend>
+    <p>
+    <label >
+    <span>Token: </span>
+    <input type="text"  name="telegram_token" title="Specify the token for Telegram Bot you wish to communicate with. " required />
+    
+    </label>
+  </p>
+ 
+   
+  </fieldset>
+ 
+ 
+  </section>
+  
+  <section>
+  
+  <fieldset>
+    <legend>Group Me:</legend>
+    <p>
+    <label >
+    <span>Bot ID: </span>
+    <input type="text"  name="groupme_bot_id" title="Specify the bot id for GroupMe Bot you wish to communicate with. " required />
+    
+    </label>
+  </p>
+ 
+   
+  </fieldset>
+ 
+ 
+  </section>
+ 
+ <section>
+
+ <fieldset>
+    <legend>Cisco Spark</legend>
+    <p>
+    <label>
+    <span>Authorization: </span>
+    <input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with. " required />
+    
+    </label>
+  </p>
+ 
+  
+  </fieldset>
+ 
+ 
+  </section>
+  
+   <section>
+
+ <fieldset>
+    <legend>Microsoft Bot</legend>
+    <p>
+    <label>
+    <span>App ID: </span>
+    <input type="text"  name="microsoft_app_id" title="Specify the App ID for Microsoft Bot you wish to communicate with." required />
+    
+    </label>
+  </p>
+ 
+  <p>
+    <label>
+    <span>Password: </span>
+    <input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." required />
+    
+    </label>
+  </p>
+  
+  </fieldset>
+ 
+ 
+  </section>
+  
+    <section>
+
+ <fieldset>
+    <legend>Line</legend>
+    <p>
+    <label>
+    <span>Channel ID: </span>
+    <input type="text"  name="channel_id" title="Specify the Channel ID for Line Bot you wish to communicate with." required />
+    
+    </label>
+  </p>
+ 
+   <p>
+    <label>
+    <span>Channel Secret: </span>
+    <input type="text" name="channel_secret"  title="Specify the Channel Secret for Line Bot you wish to communicate with." required />
+    </label>
+  </p>
+  
+     <p>
+    <label >
+    <span>Trusted User ACL: </span>
+    <input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." required />
+    </label>
+  </p>
+  </fieldset>
+ 
+ 
+  </section>
+  
+  
+  <section>
+  <p>
+    <button>Configure Bots</button>
+  </p>
+  </section>
+</form>
+  </body>
+
+</html>
