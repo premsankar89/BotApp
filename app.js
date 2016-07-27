@@ -113,6 +113,20 @@ connector = new builder.ChatConnector({
     appPassword: microsoft_app_pswd
 });
 msbot = new builder.UniversalBot(connector);
+msbot.dialog('/', function (session) {
+ var payload = {
+    workspace_id: conv_workspace_id,
+    input: {"text":session.message.text},
+    context: {}
+  };
+  conversation.message(payload, function(err, data) {
+    if (err) {
+      console.log(err);
+    }
+    else
+      session.send('I understood your intent was:'+data.intents[0].intent);
+  });
+});
 }
 
 function configureConversation() {
