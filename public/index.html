@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/jquery.switchButton.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="js/jquery.switchButton.js"></script>
   </head>
 
   <body>
@@ -15,11 +19,12 @@
   <section>
  
   <fieldset>
-    <legend>Watson Conversation Service</legend>
-    <p>
+    <legend><span>Watson Conversation Service </span><span><input type="checkbox" id ="conv" value="1" checked></span></legend>
+    <div id="conv_stuff">
+    <p>
     <label >
     <span>UserName: </span>
-    <input type="text" name="conv_username" title="Specify the conversation service user name" required />
+    <input type="text" name="conv_username" title="Specify the conversation service user name" />
     
     </label>
   </p>
@@ -27,16 +32,17 @@
    <p>
     <label >
     <span>Password: </span>
-    <input type="text" name="conv_password" title="Specify the conversation service password" required />
+    <input type="text" name="conv_password" title="Specify the conversation service password" />
     </label>
   </p>
   
      <p>
     <label >
     <span>Workspace ID: </span>
-    <input type="text"  name="conv_workspace_id" title="Specify the conversation service Workspace ID" required />
+    <input type="text"  name="conv_workspace_id" title="Specify the conversation service Workspace ID" />
     </label>
   </p>
+</div>
   </fieldset>
  
  
@@ -45,15 +51,16 @@
     <section>
   
   <fieldset>
-    <legend>Telegram</legend>
-    <p>
+    <legend><span>Telegram</span><span><input type="checkbox" id ="tele" value="1" checked></span></legend>
+   <div id ="tele_stuff"> 
+   <p>
     <label >
     <span>Token: </span>
-    <input type="text"  name="telegram_token" title="Specify the token for Telegram Bot you wish to communicate with. " required />
+    <input type="text"  name="telegram_token" title="Specify the token for Telegram Bot you wish to communicate with." />
     
     </label>
   </p>
- 
+ </div>
    
   </fieldset>
  
@@ -63,15 +70,16 @@
   <section>
   
   <fieldset>
-    <legend>Group Me:</legend>
-    <p>
+    <legend><span>Group Me</span><span><input type="checkbox" id ="gme" value="1" checked></span></legend>
+<div id="gme_stuff">    
+<p>
     <label >
     <span>Bot ID: </span>
-    <input type="text"  name="groupme_bot_id" title="Specify the bot id for GroupMe Bot you wish to communicate with. " required />
+    <input type="text"  name="groupme_bot_id" title="Specify the bot id for GroupMe Bot you wish to communicate with." />
     
     </label>
   </p>
- 
+ </div>
    
   </fieldset>
  
@@ -81,15 +89,16 @@
  <section>
 
  <fieldset>
-    <legend>Cisco Spark</legend>
-    <p>
+    <legend><span>Cisco Spark</span><span><input type="checkbox" id ="spark" value="1" checked></span></legend>
+    <div id="spark_stuff">
+    <p>
     <label>
     <span>Authorization: </span>
-    <input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with. " required />
+    <input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with."/>
     
     </label>
   </p>
- 
+ </div>
   
   </fieldset>
  
@@ -99,11 +108,11 @@
    <section>
 
  <fieldset>
-    <legend>Microsoft Bot</legend>
-    <p>
+    <legend><span>Microsoft Bot</span><span><input type="checkbox" id ="ms" value="1" checked></span></legend>
+    <div id="ms_stuff"><p>
     <label>
     <span>App ID: </span>
-    <input type="text"  name="microsoft_app_id" title="Specify the App ID for Microsoft Bot you wish to communicate with." required />
+    <input type="text"  name="microsoft_app_id" title="Specify the App ID for Microsoft Bot you wish to communicate with." />
     
     </label>
   </p>
@@ -111,11 +120,11 @@
   <p>
     <label>
     <span>Password: </span>
-    <input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." required />
+    <input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." />
     
     </label>
   </p>
-  
+  </div>
   </fieldset>
  
  
@@ -124,11 +133,11 @@
     <section>
 
  <fieldset>
-    <legend>Line</legend>
-    <p>
+    <legend><span>Line</span><span><input type="checkbox" id ="line" value="1" checked></span></legend>
+    <div id="line_stuff"><p>
     <label>
     <span>Channel ID: </span>
-    <input type="text"  name="channel_id" title="Specify the Channel ID for Line Bot you wish to communicate with." required />
+    <input type="text"  name="channel_id" title="Specify the Channel ID for Line Bot you wish to communicate with." />
     
     </label>
   </p>
@@ -136,16 +145,17 @@
    <p>
     <label>
     <span>Channel Secret: </span>
-    <input type="text" name="channel_secret"  title="Specify the Channel Secret for Line Bot you wish to communicate with." required />
+    <input type="text" name="channel_secret"  title="Specify the Channel Secret for Line Bot you wish to communicate with." />
     </label>
   </p>
   
      <p>
     <label >
     <span>Trusted User ACL: </span>
-    <input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." required />
+    <input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." />
     </label>
   </p>
+</div>
   </fieldset>
  
  
@@ -159,5 +169,33 @@
   </section>
 </form>
   </body>
+<script>
+      $(function() {
+        $('#conv').switchButton();
+        $('#conv').change(function() {
+          $( "#conv_stuff" ).toggle( 'blind', {}, 250 );
+       });
+        $('#tele').switchButton();
+        $('#tele').change(function() {
+          $( "#tele_stuff" ).toggle( 'blind', {}, 250 );
+       });
+        $('#gme').switchButton();
+        $('#gme').change(function() {
+          $( "#gme_stuff" ).toggle( 'blind', {}, 250 );
+       });
+        $('#spark').switchButton();
+        $('#spark').change(function() {
+          $( "#spark_stuff" ).toggle( 'blind', {}, 250 );
+       });
+        $('#ms').switchButton();
+        $('#ms').change(function() {
+          $( "#ms_stuff" ).toggle( 'blind', {}, 250 );
+       });
+        $('#line').switchButton();
+        $('#line').change(function() {
+          $( "#line_stuff" ).toggle( 'blind', {}, 250 );
+       });
 
+      });
+    </script>
 </html>
