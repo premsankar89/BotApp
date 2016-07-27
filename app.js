@@ -109,6 +109,8 @@ msbot.dialog('/', function (session) {
       session.send('I understood your intent was:'+data.intents[0].intent);
   });
 });
+// Any kind of Microsoft Chat App message
+//Set this endpoint in Microsoft Bot Callback
 app.post('/api/messages', connector.listen());
 }
 
@@ -143,8 +145,6 @@ tbot.on('message', function (msg) {
   });
 });
 }
-
-// Any kind of MS Bot message
 
 // Any kind of Line message
 //Set this endpoint in Line Bot Callback
@@ -225,26 +225,6 @@ app.post('/spark', function (req, res) {
   });
 
 	}
-  res.send("ok");
-});
-
-// Any kind of Microsoft Chat App message
-//Set this endpoint in Microsoft Bot Callback
-app.post('/microsoft', function (req, res) {
-	//@sputhana add logging here
-	var payload = {
-    workspace_id: conv_workspace_id,
-    input: {"text":'turn on wipers'},
-    context: {}
-  };
-  // Send the input to the conversation service to get the intent
-  conversation.message(payload, function(err, data) {
-    if (err) {
-      console.log(err);
-    }//
-	var text='I think your intent was: '+data.intents[0].intent;
-  });
-
   res.send("ok");
 });
 
