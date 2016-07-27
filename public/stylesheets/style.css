@@ -51,19 +51,6 @@ h1 {
 	color: #00aed1;
 }
 
-
-table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
-}
-
-th {
-	border-bottom: 1px solid #000;
-}
-
 th, td {
 	text-align: left;
 	padding: 2px 20px;
