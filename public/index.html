@@ -79,6 +79,13 @@
     
     </label>
   </p>
+  <p>
+    <label >
+    <span>Callback URL: </span>
+    <input type="text"  id="gm_cb" title="URL that will be pinged every time a message is posted."disabled/>
+    
+    </label>
+  </p>
  </div>
    
   </fieldset>
@@ -95,6 +102,13 @@
     <label>
     <span>Authorization: </span>
     <input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with."/>
+    
+    </label>
+  </p>
+  <p>
+    <label >
+    <span>Callback URL: </span>
+    <input type="text"  id="spark_cb" title="URL that will be pinged every time a message is posted."disabled/>
     
     </label>
   </p>
@@ -121,6 +135,14 @@
     <label>
     <span>Password: </span>
     <input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." />
+    
+    </label>
+  </p>
+  
+  <p>
+    <label >
+    <span>Callback URL: </span>
+    <input type="text"  id="ms_cb" title="URL that will be pinged every time a message is posted."disabled/>
     
     </label>
   </p>
@@ -153,6 +175,13 @@
     <label >
     <span>Trusted User ACL: </span>
     <input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." />
+    </label>
+  </p>
+  <p>
+    <label >
+    <span>Callback URL: </span>
+    <input type="text"  id="line_cb" title="URL that will be pinged every time a message is posted."disabled/>
+    
     </label>
   </p>
 </div>
@@ -195,7 +224,11 @@
         $('#line').change(function() {
           $( "#line_stuff" ).toggle( 'blind', {}, 250 );
        });
-
+      var url= window.location.href.replace('http','https').replace('/index.html','');
+     $('#ms_cb').val(url+'/api/messages');
+	   $('#line_cb').val(url+':443/line');
+	   $('#gm_cb').val(url+'/groupme');
+	   $('#spark_cb').val(url+'/spark');
       });
     </script>
 </html>
