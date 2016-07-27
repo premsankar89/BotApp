@@ -37,7 +37,7 @@ var line_csecret;
 var line_acl;
 var conversation;
 var connector;
-var msbot
+var msbot;
 var groupme_callback = 'https://api.groupme.com/v3/bots/post';
 var spark_webhook = 'https://api.ciscospark.com/v1/messages';
 var line_webhook = 'https://trialbot-api.line.me/v1/events';
@@ -56,26 +56,7 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
-connector = new builder.ChatConnector({
-    appId: microsoft_app_id,
-    appPassword: microsoft_app_pswd
-});
-msbot = new builder.UniversalBot(connector);
 
-msbot.dialog('/', function (session) {
- var payload = {
-    workspace_id: conv_workspace_id,
-    input: {"text":session.message.text},
-    context: {}
-  };
-  conversation.message(payload, function(err, data) {
-    if (err) {
-      console.log(err);
-    }
-    else
-      session.send('I understood your intent was:'+data.intents[0].intent);
-  });
-});
 //Configure all token info here
 app.post('/configure', function (req, res) {
    //@sputhana add logging here
@@ -113,7 +94,9 @@ connector = new builder.ChatConnector({
     appPassword: microsoft_app_pswd
 });
 msbot = new builder.UniversalBot(connector);
+
 msbot.dialog('/', function (session) {
+	console.log('Step 2');
  var payload = {
     workspace_id: conv_workspace_id,
     input: {"text":session.message.text},
@@ -127,7 +110,9 @@ msbot.dialog('/', function (session) {
       session.send('I understood your intent was:'+data.intents[0].intent);
   });
 });
+app.post('/api/messages', connector.listen());
 }
+
 
 function configureConversation() {
 	//@sputhana add logging here
@@ -161,7 +146,6 @@ tbot.on('message', function (msg) {
 }
 
 // Any kind of MS Bot message
-app.post('/api/messages', connector.listen());
 
 // Any kind of Line message
 //Set this endpoint in Line Bot Callback
