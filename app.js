@@ -7,7 +7,7 @@
 // This application uses express as its web server
 // for more info, see: http://expressjs.com
 var express = require('express');
-
+var builder = require('botbuilder');
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
@@ -36,6 +36,8 @@ var line_cid;
 var line_csecret;
 var line_acl;
 var conversation;
+var connector;
+var msbot
 var groupme_callback = 'https://api.groupme.com/v3/bots/post';
 var spark_webhook = 'https://api.ciscospark.com/v1/messages';
 var line_webhook = 'https://trialbot-api.line.me/v1/events';
@@ -73,6 +75,7 @@ app.post('/configure', function (req, res) {
    //Configure Microsoft App
    microsoft_app_id = req.body.microsoft_app_id;
    microsoft_app_pswd = req.body.microsoft_app_pswd;
+   configureMSBot();
    //Configure Group Me
    groupme_bot_id = req.body.groupme_bot_id;
    //Configure Spark
@@ -80,7 +83,33 @@ app.post('/configure', function (req, res) {
    res.send("ok");
 });
 
-//Do we need to get this Conversation stuff credentials also through UI ?
+function configureMSBot(){
+connector = new builder.ChatConnector({
+    appId: microsoft_app_id,
+    appPassword: microsoft_app_pswd
+});
+msbot = new builder.UniversalBot(connector);
+}
+
+//=========================================================
+// MS Bots Dialogs
+//=========================================================
+
+msbot.dialog('/', function (session) {
+ var payload = {
+    workspace_id: conv_workspace_id,
+    input: {"text":session.message.text},
+    context: {}
+  };
+  conversation.message(payload, function(err, data) {
+    if (err) {
+      console.log(err);
+    }
+    else
+      session.send('I understood your intent was:'+data.intents[0].intent);
+  });
+});
+
 function configureConversation() {
 	//@sputhana add logging here
 conversation = watson.conversation({
@@ -111,6 +140,9 @@ tbot.on('message', function (msg) {
   });
 });
 }
+
+// Any kind of MS Bot message
+app.post('/api/messages', connector.listen());
 
 // Any kind of Line message
 //Set this endpoint in Line Bot Callback
