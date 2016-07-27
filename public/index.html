@@ -224,11 +224,12 @@
         $('#line').change(function() {
           $( "#line_stuff" ).toggle( 'blind', {}, 250 );
        });
-       var url= window.location.href.replace('http','https').replace('/index.html','');
-       $('#ms_cb').val(url+'api/messages');
+       var url= window.location.href.replace('http','https').replace('/index.html','').trim();
+       url = url.slice(0,-1);
+       $('#ms_cb').val(url+'/api/messages');
 	   $('#line_cb').val(url+':443/line');
-	   $('#gm_cb').val(url+'groupme');
-	   $('#spark_cb').val(url+'spark');
+	   $('#gm_cb').val(url+'/groupme');
+	   $('#spark_cb').val(url+'/spark');
       });
     </script>
 </html>
