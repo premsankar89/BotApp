@@ -83,17 +83,16 @@ app.post('/configure', function (req, res) {
    res.send("ok");
 });
 
+//=========================================================
+// MS Bots Dialogs
+//=========================================================
+
 function configureMSBot(){
 connector = new builder.ChatConnector({
     appId: microsoft_app_id,
     appPassword: microsoft_app_pswd
 });
 msbot = new builder.UniversalBot(connector);
-}
-
-//=========================================================
-// MS Bots Dialogs
-//=========================================================
 
 msbot.dialog('/', function (session) {
  var payload = {
@@ -109,6 +108,7 @@ msbot.dialog('/', function (session) {
       session.send('I understood your intent was:'+data.intents[0].intent);
   });
 });
+}
 
 function configureConversation() {
 	//@sputhana add logging here
