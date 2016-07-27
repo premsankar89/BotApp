@@ -96,7 +96,6 @@ connector = new builder.ChatConnector({
 msbot = new builder.UniversalBot(connector);
 
 msbot.dialog('/', function (session) {
-	console.log('Step 2');
  var payload = {
     workspace_id: conv_workspace_id,
     input: {"text":session.message.text},
@@ -233,7 +232,6 @@ app.post('/spark', function (req, res) {
 //Set this endpoint in Microsoft Bot Callback
 app.post('/microsoft', function (req, res) {
 	//@sputhana add logging here
-   console.log(JSON.stringify(req.body));
 	var payload = {
     workspace_id: conv_workspace_id,
     input: {"text":'turn on wipers'},
@@ -254,7 +252,6 @@ app.post('/microsoft', function (req, res) {
 //Set this endpoint in Groupme Bot Callback
 app.post('/groupme', function (req, res) {
 	//@sputhana add logging here
-	console.log(JSON.stringify(req.body));
    var msg = req.body.text;
    var stype= req.body.sender_type;
 	var payload = {
