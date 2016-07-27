@@ -21,27 +21,27 @@
   <fieldset>
     <legend><span>Watson Conversation Service </span><span><input type="checkbox" id ="conv" value="1" checked></span></legend>
     <div id="conv_stuff">
-    <p>
-    <label >
-    <span>UserName: </span>
-    <input type="text" name="conv_username" title="Specify the conversation service user name" />
+    <table><tr>
+    <label ><td>
+    <span>UserName: </span></td>
+    <td><input type="text" name="conv_username" title="Specify the conversation service user name" /></td>
     
     </label>
-  </p>
+  </tr>
  
-   <p>
-    <label >
-    <span>Password: </span>
-    <input type="text" name="conv_password" title="Specify the conversation service password" />
+   <tr>
+    <label ><td>
+    <span>Password: </span></td>
+    <td><input type="text" name="conv_password" title="Specify the conversation service password" /></td>
     </label>
-  </p>
+  </tr>
   
-     <p>
-    <label >
-    <span>Workspace ID: </span>
-    <input type="text"  name="conv_workspace_id" title="Specify the conversation service Workspace ID" />
+     <tr>
+    <label ><td>
+    <span>Workspace ID: </span></td>
+    <td><input type="text"  name="conv_workspace_id" title="Specify the conversation service Workspace ID" /></td>
     </label>
-  </p>
+ </tr></table>
 </div>
   </fieldset>
  
@@ -53,13 +53,13 @@
   <fieldset>
     <legend><span>Telegram</span><span><input type="checkbox" id ="tele" value="1" checked></span></legend>
    <div id ="tele_stuff"> 
-   <p>
-    <label >
-    <span>Token: </span>
-    <input type="text"  name="telegram_token" title="Specify the token for Telegram Bot you wish to communicate with." />
+   <table><tr>
+    <label ><td>
+    <span>Token: </span></td>
+    <td><input type="text"  name="telegram_token" title="Specify the token for Telegram Bot you wish to communicate with." /></td>
     
     </label>
-  </p>
+  </tr></table>
  </div>
    
   </fieldset>
@@ -72,20 +72,19 @@
   <fieldset>
     <legend><span>Group Me</span><span><input type="checkbox" id ="gme" value="1" checked></span></legend>
 <div id="gme_stuff">    
-<p>
-    <label >
-    <span>Bot ID: </span>
-    <input type="text"  name="groupme_bot_id" title="Specify the bot id for GroupMe Bot you wish to communicate with." />
+<table><tr>
+    <label ><td>
+    <span>Bot ID: </span></td>
+    <td><input type="text"  name="groupme_bot_id" title="Specify the bot id for GroupMe Bot you wish to communicate with." /></td>
     
     </label>
-  </p>
-  <p>
-    <label >
-    <span>Callback URL: </span>
-    <input type="text"  id="gm_cb" title="URL that will be pinged every time a message is posted."disabled/>
+</tr><tr>
+    <label ><td>
+    <span>Callback URL: </span></td>
+    <td><input type="text"  id="gm_cb" title="URL that will be pinged every time a message is posted." disabled/></td>
     
     </label>
-  </p>
+</tr> </table>
  </div>
    
   </fieldset>
@@ -98,20 +97,20 @@
  <fieldset>
     <legend><span>Cisco Spark</span><span><input type="checkbox" id ="spark" value="1" checked></span></legend>
     <div id="spark_stuff">
-    <p>
-    <label>
-    <span>Authorization: </span>
-    <input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with."/>
+    <table><tr>
+    <label><td>
+    <span>Authorization: </span></td>
+    <td><input type="text"  name="spark_auth" title="Specify the authorization header for Spark Bot you wish to communicate with."/></td>
+   
+    </label>
+  </tr>
+<tr>
+    <label ><td>
+    <span>Callback URL: </span></td>
+    <td><input type="text"  id="spark_cb" title="URL that will be pinged every time a message is posted." disabled/></td>
     
     </label>
-  </p>
-  <p>
-    <label >
-    <span>Callback URL: </span>
-    <input type="text"  id="spark_cb" title="URL that will be pinged every time a message is posted."disabled/>
-    
-    </label>
-  </p>
+  </tr></table>
  </div>
   
   </fieldset>
@@ -123,29 +122,29 @@
 
  <fieldset>
     <legend><span>Microsoft Bot</span><span><input type="checkbox" id ="ms" value="1" checked></span></legend>
-    <div id="ms_stuff"><p>
-    <label>
-    <span>App ID: </span>
-    <input type="text"  name="microsoft_app_id" title="Specify the App ID for Microsoft Bot you wish to communicate with." />
+    <div id="ms_stuff">
+     <table><tr>
+    <label><td>
+    <span>App ID: </span></td>
+    <td><input type="text"  name="microsoft_app_id" title="Specify the App ID for Microsoft Bot you wish to communicate with." /></td>
     
     </label>
-  </p>
+  </tr>
  
-  <p>
-    <label>
-    <span>Password: </span>
-    <input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." />
+  <tr>
+    <label><td>
+    <span>Password: </span></td>
+    <td><input type="text"  name="microsoft_app_pswd" title="Specify the App Password for Microsoft Bot you wish to communicate with." /></td>
     
     </label>
-  </p>
-  
-  <p>
-    <label >
-    <span>Callback URL: </span>
-    <input type="text"  id="ms_cb" title="URL that will be pinged every time a message is posted."disabled/>
+  </tr>
+<tr>
+    <label ><td>
+    <span>Callback URL: </span></td>
+    <td><input type="text"  id="ms_cb" title="URL that will be pinged every time a message is posted." disabled/></td>
     
     </label>
-  </p>
+   </tr></table>
   </div>
   </fieldset>
  
@@ -156,34 +155,35 @@
 
  <fieldset>
     <legend><span>Line</span><span><input type="checkbox" id ="line" value="1" checked></span></legend>
-    <div id="line_stuff"><p>
-    <label>
-    <span>Channel ID: </span>
-    <input type="text"  name="channel_id" title="Specify the Channel ID for Line Bot you wish to communicate with." />
+    <div id="line_stuff">
+    <table><tr>
+    <label><td>
+    <span>Channel ID: </span></td>
+    <td><input type="text"  name="channel_id" title="Specify the Channel ID for Line Bot you wish to communicate with." /></td>
     
     </label>
-  </p>
+  </tr>
  
-   <p>
-    <label>
-    <span>Channel Secret: </span>
-    <input type="text" name="channel_secret"  title="Specify the Channel Secret for Line Bot you wish to communicate with." />
+   <tr>
+    <label><td>
+    <span>Channel Secret: </span></td>
+    <td><input type="text" name="channel_secret"  title="Specify the Channel Secret for Line Bot you wish to communicate with." /></td>
     </label>
-  </p>
+  </tr>
   
-     <p>
-    <label >
-    <span>Trusted User ACL: </span>
-    <input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." />
+     <tr>
+    <label ><td>
+    <span>Trusted User ACL: </span></td>
+    <td><input type="text" name="user_acl"  title="Specify the Channel ACL for Line Bot you wish to communicate with." /></td>
     </label>
-  </p>
-  <p>
-    <label >
-    <span>Callback URL: </span>
-    <input type="text"  id="line_cb" title="URL that will be pinged every time a message is posted."disabled/>
+  </tr>
+<tr>
+    <label ><td>
+    <span>Callback URL: </span></td>
+    <td><input type="text"  id="line_cb" title="URL that will be pinged every time a message is posted."disabled/></td>
     
     </label>
-  </p>
+   </tr></table>
 </div>
   </fieldset>
  
@@ -224,8 +224,8 @@
         $('#line').change(function() {
           $( "#line_stuff" ).toggle( 'blind', {}, 250 );
        });
-      var url= window.location.href.replace('http','https').replace('/index.html','');
-     $('#ms_cb').val(url+'/api/messages');
+       var url= window.location.href.replace('http','https').replace('/index.html','');
+       $('#ms_cb').val(url+'/api/messages');
 	   $('#line_cb').val(url+':443/line');
 	   $('#gm_cb').val(url+'/groupme');
 	   $('#spark_cb').val(url+'/spark');
