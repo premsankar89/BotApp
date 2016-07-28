@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+ <head>
     <title>NodeJS Starter Application</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     <script src="js/jquery.switchButton.js"></script>
-  </head>
+    <script src="js/fetchData.js"></script>
+ </head>
 
   <body>
     <form id="myform" action="/configure" method="post" enctype="application/x-www-form-urlencoded">
@@ -231,5 +232,6 @@
 	   $('#gm_cb').val(url+'/groupme');
 	   $('#spark_cb').val(url+'/spark');
       });
+      fetchData();
     </script>
 </html>
